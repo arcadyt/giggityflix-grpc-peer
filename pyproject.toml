@@ -1,0 +1,29 @@
+[project]
+name = "giggityflix-grpc-peer"
+version = "0.1.0"
+description = "Shared gRPC interfaces for GiggityFlix ecosystem"
+requires-python = ">=3.11"
+dependencies = [
+    "grpcio>=1.59.0",
+    "grpcio-tools>=1.59.0"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "grpcio>=1.59.0", "grpcio-tools>=1.59.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "giggityflix-grpc-peer"
+version = "0.1.0"
+description = "Shared gRPC interfaces for GiggityFlix ecosystem"
+packages = [
+    { include = "scripts" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+grpcio = "^1.59.0"
+grpcio-tools = "^1.59.0"
+
+[tool.poetry.scripts]
+gen-proto = "scripts.generate_protos:main"
