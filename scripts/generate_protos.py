@@ -7,7 +7,7 @@ from pathlib import Path
 # Calculate paths relative to the project root
 PROJECT_ROOT = Path(__file__).parent.parent
 PROTO_DIR = PROJECT_ROOT / "protos"
-GENERATED_ROOT = PROJECT_ROOT / "src" / "giggityflix" / "grpc_peer" / "generated"
+GENERATED_ROOT = PROJECT_ROOT / "src" / "giggityflix_grpc_peer" / "grpc_peer" / "generated"
 
 
 def clean():
