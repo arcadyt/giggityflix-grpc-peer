@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Shared gRPC interface definitions for communication with peer service in the GiggityFlix ecosystem"
 readme = "README.md"
 packages = [
-    {include = "generated", from = "src"}
+    { include = "giggityflix/grpc_peer", from = "src" }
 ]
 
 [tool.poetry.dependencies]
