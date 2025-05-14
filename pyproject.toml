@@ -1,12 +1,12 @@
 [build-system]
+name = "giggityflix_grpc_peer"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "giggityflix-grpc-peer"
+name = "giggityflix_grpc_peer"
 version = "0.1.0"
 description = "Shared gRPC interface definitions for communication between peer and edge services in the GiggityFlix ecosystem"
-authors = ["GiggityFlix Team"]
 readme = "README.md"
 packages = [
     {include = "src"}
