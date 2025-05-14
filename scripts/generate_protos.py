@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-import os
-import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
-import shutil
 
 # Calculate paths relative to the project root
 PROJECT_ROOT = Path(__file__).parent.parent
 PROTO_DIR = PROJECT_ROOT / "protos"
-GENERATED_ROOT = PROJECT_ROOT / "src" / "generated"
+GENERATED_ROOT = PROJECT_ROOT / "src" / "giggityflix" / "grpc_peer" / "generated"
+
 
 def clean():
     """Clean generated directory"""
@@ -17,6 +16,7 @@ def clean():
         shutil.rmtree(GENERATED_ROOT)
     GENERATED_ROOT.mkdir(parents=True, exist_ok=True)
     (GENERATED_ROOT / "__init__.py").touch()
+
 
 def generate():
     """Generate gRPC/protobuf files"""
@@ -53,31 +53,9 @@ def generate():
 
         # Create package marker
         (output_dir / "__init__.py").touch()
-        
-        # Fix imports in generated files
-        fix_imports(output_dir, module)
-        
+
         print(f"Generated {module} in {output_dir}")
 
-def fix_imports(generated_dir, module_name):
-    """Fix imports in generated files to use correct package paths"""
-    pb2_file = generated_dir / f"{module_name}_pb2.py"
-    grpc_file = generated_dir / f"{module_name}_pb2_grpc.py"
-
-    # Fix imports in the grpc file
-    if grpc_file.exists():
-        with open(grpc_file, "r") as f:
-            content = f.read()
-
-        # Replace direct imports with relative imports
-        content = re.sub(
-            fr"import {module_name}_pb2",
-            fr"from . import {module_name}_pb2",
-            content
-        )
-
-        with open(grpc_file, "w") as f:
-            f.write(content)
 
 def main():
     """Main entry point"""
@@ -87,6 +65,7 @@ def main():
     generate()
     print("gRPC code generation complete")
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())

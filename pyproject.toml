@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "giggityflix_grpc_peer"
 version = "0.1.0"
-description = "Shared gRPC interface definitions for communication between peer and edge services in the GiggityFlix ecosystem"
+description = "Shared gRPC interface definitions for communication with peer service in the GiggityFlix ecosystem"
 readme = "README.md"
 packages = [
     {include = "generated", from = "src"}
@@ -13,12 +13,32 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
-grpcio = "^1.59.0"
-grpcio-tools = "^1.59.0"
-protobuf = "^4.24.3"
+grpcio = "^1.71.0"
+grpcio-tools = "^1.71.0"
+protobuf = "^6.31.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.1.1"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.11"
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_ignores = true
 
 [tool.poetry.scripts]
 generate-protos = "scripts.generate_protos:main"
