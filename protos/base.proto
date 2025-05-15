@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package giggityflix_grpc_peer;
+
+import "catalog.proto";
+import "file_operations.proto";
+import "media.proto";
+import "webrtc.proto";
+
+service PeerEdgeService {
+  rpc AsyncOperations(stream PeerMessage) returns (stream EdgeMessage);
+  rpc WebRTCOperations(EdgeWebRTCMessage) returns (PeerWebRTCMessage);
+}
+
+message EdgeMessage {
+  string request_id = 1;
+  string edge_id = 2;
+  oneof payload {
+    // File operations
+    file_operations.FileDeleteRequest file_delete_request = 3;
+    file_operations.FileHashRequest file_hash_request = 4;
+    file_operations.FileRemapRequest file_remap_request = 5;
+
+    // Catalog operations
+    catalog.FileOfferResponse batch_file_offer_response = 6;
+    catalog.CatalogAnnouncementRequest catalog_announcement_request = 7;
+
+    // Media operations
+    media.ScreenshotCaptureRequest screenshot_capture_request = 8;
+  }
+}
+
+message PeerMessage {
+  string request_id = 1;
+  oneof payload {
+    // File operations
+    file_operations.FileDeleteResponse file_delete_response = 2;
+    file_operations.FileHashResponse file_hash_response = 3;
+
+    // Catalog operations
+    catalog.CatalogAnnouncementResponse catalog_announcement = 4;
+    catalog.FileOfferRequest batch_file_offer = 5;
+  }
+}
+
+message EdgeWebRTCMessage  {
+  string request_id = 1;
+  oneof payload {
+    webrtc.StreamSessionRequest stream_session_request = 2;
+    webrtc.SDPAnswer sdp_answer = 3;
+    webrtc.ICECandidate ice_candidate = 4;
+  }
+}
+
+message PeerWebRTCMessage  {
+  string request_id = 1;
+  oneof payload {
+    webrtc.StreamSessionResponse stream_session_response = 2;
+    webrtc.SDPOffer sdp_offer = 3;
+    webrtc.ICECandidate ice_candidate = 4;
+  }
+}
+

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package giggityflix_grpc_peer.commons;
+
+enum CatalogErrorReason {
+  BAD_CATALOG_ID = 0;
+  FILE_GONE = 1;
+  PERMISSION_DENIED = 2;
+}

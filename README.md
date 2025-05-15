@@ -74,7 +74,7 @@ requests_iterator = iter([
         request_id="req1",
         registration_request=PeerRegistrationRequest(
             peer_name="my-peer",
-            catalog_uuids=["uuid1", "uuid2"]
+            catalog_ids=["uuid1", "uuid2"]
         )
     )
 ])

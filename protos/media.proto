@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package giggityflix_grpc_peer.media;
+
+message ScreenshotCaptureRequest {
+  string catalog_id = 1;
+  int32 quantity = 2;
+  string upload_token = 3;
+  string upload_endpoint = 4;
+}

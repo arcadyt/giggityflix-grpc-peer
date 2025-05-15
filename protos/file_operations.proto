@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package giggityflix_grpc_peer.file_operations;
+
+import "commons.proto";
+
+message FileDeleteRequest {
+  repeated string catalog_ids = 1;
+}
+
+message FileDeleteResponse {
+  string catalog_id = 1;
+  bool success = 2;
+  optional commons.CatalogErrorReason error = 3;
+}
+
+message FileHashRequest {
+  string catalog_id = 1;
+  repeated string hash_types = 2;
+}
+
+message FileHashResponse {
+  string catalog_id = 1;
+  map<string, string> hashes = 2;
+  bool success = 3;
+  optional commons.CatalogErrorReason error = 4;
+}
+
+message FileRemapRequest {
+  string old_catalog_id = 1;
+  string new_catalog_id = 2;
+}
+
+message FileRemapResponse {
+  string new_catalog_id = 1;
+  bool success = 2;
+  optional commons.CatalogErrorReason error = 3;
+}

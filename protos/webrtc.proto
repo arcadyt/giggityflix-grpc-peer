@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package giggityflix_grpc_peer.webrtc;
+import "commons.proto";
+
+message StreamSessionRequest {
+  string catalog_id = 1;
+  string session_id = 2;
+  optional int32 max_bitrate_kbps = 3;
+  optional string preferred_codec = 4;
+}
+
+message StreamSessionResponse {
+  string catalog_id = 1;
+  string session_id = 2;
+  bool success = 3;
+  optional commons.CatalogErrorReason error = 4;
+}
+
+message SDPOffer {
+  string session_id = 1;
+  string sdp = 2;
+}
+
+message SDPAnswer {
+  string session_id = 1;
+  string sdp = 2;
+}
+
+message ICECandidate {
+  string session_id = 1;
+  string candidate = 2;
+  string sdp_mid = 3;
+  int32 sdp_m_line_index = 4;
+}

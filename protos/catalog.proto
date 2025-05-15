@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package giggityflix_grpc_peer.catalog;
+
+message CatalogAnnouncementRequest {
+}
+
+message CatalogAnnouncementResponse {
+  repeated string catalog_ids = 1;
+}
+
+// Announcing recently scraped files
+message FileOfferRequest {
+  repeated FileInfo files = 1;
+}
+
+message FileInfo {
+  string relative_path = 1;
+  int64 size_bytes = 2;
+}
+
+message FileOfferResponse {
+  repeated CatalogedInfo files = 1;
+}
+
+message CatalogedInfo {
+  string relative_path = 1;
+  string catalog_id = 2;
+}
