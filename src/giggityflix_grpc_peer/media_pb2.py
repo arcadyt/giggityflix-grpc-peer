@@ -24,13 +24,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bmedia.proto\x12\x1bgiggityflix_grpc_peer.media\"o\n\x18ScreenshotCaptureRequest\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\x12\x14\n\x0cupload_token\x18\x03 \x01(\t\x12\x17\n\x0fupload_endpoint\x18\x04 \x01(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bmedia.proto\x12\x15giggityflix_grpc_peer\"o\n\x18ScreenshotCaptureRequest\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\x12\x14\n\x0cupload_token\x18\x03 \x01(\t\x12\x17\n\x0fupload_endpoint\x18\x04 \x01(\tb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'media_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_SCREENSHOTCAPTUREREQUEST']._serialized_start=44
-  _globals['_SCREENSHOTCAPTUREREQUEST']._serialized_end=155
+  _globals['_SCREENSHOTCAPTUREREQUEST']._serialized_start=38
+  _globals['_SCREENSHOTCAPTUREREQUEST']._serialized_end=149
 # @@protoc_insertion_point(module_scope)

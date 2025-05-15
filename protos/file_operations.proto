@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package giggityflix_grpc_peer.file_operations;
+package giggityflix_grpc_peer;
 
 import "commons.proto";
 
@@ -11,7 +11,7 @@ message FileDeleteRequest {
 message FileDeleteResponse {
   string catalog_id = 1;
   bool success = 2;
-  optional commons.CatalogErrorReason error = 3;
+  optional CatalogErrorReason error = 3;
 }
 
 message FileHashRequest {
@@ -23,7 +23,7 @@ message FileHashResponse {
   string catalog_id = 1;
   map<string, string> hashes = 2;
   bool success = 3;
-  optional commons.CatalogErrorReason error = 4;
+  optional CatalogErrorReason error = 4;
 }
 
 message FileRemapRequest {
@@ -34,5 +34,5 @@ message FileRemapRequest {
 message FileRemapResponse {
   string new_catalog_id = 1;
   bool success = 2;
-  optional commons.CatalogErrorReason error = 3;
+  optional CatalogErrorReason error = 3;
 }

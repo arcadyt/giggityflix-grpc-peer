@@ -24,13 +24,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rcommons.proto\x12\x1dgiggityflix_grpc_peer.commons*N\n\x12\x43\x61talogErrorReason\x12\x12\n\x0e\x42\x41\x44_CATALOG_ID\x10\x00\x12\r\n\tFILE_GONE\x10\x01\x12\x15\n\x11PERMISSION_DENIED\x10\x02\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rcommons.proto\x12\x15giggityflix_grpc_peer*N\n\x12\x43\x61talogErrorReason\x12\x12\n\x0e\x42\x41\x44_CATALOG_ID\x10\x00\x12\r\n\tFILE_GONE\x10\x01\x12\x15\n\x11PERMISSION_DENIED\x10\x02\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'commons_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_CATALOGERRORREASON']._serialized_start=48
-  _globals['_CATALOGERRORREASON']._serialized_end=126
+  _globals['_CATALOGERRORREASON']._serialized_start=40
+  _globals['_CATALOGERRORREASON']._serialized_end=118
 # @@protoc_insertion_point(module_scope)

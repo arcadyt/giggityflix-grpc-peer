@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 import commons_pb2 as commons__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x66ile_operations.proto\x12%giggityflix_grpc_peer.file_operations\x1a\rcommons.proto\"(\n\x11\x46ileDeleteRequest\x12\x13\n\x0b\x63\x61talog_ids\x18\x01 \x03(\t\"\x8a\x01\n\x12\x46ileDeleteResponse\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12\x45\n\x05\x65rror\x18\x03 \x01(\x0e\x32\x31.giggityflix_grpc_peer.commons.CatalogErrorReasonH\x00\x88\x01\x01\x42\x08\n\x06_error\"9\n\x0f\x46ileHashRequest\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12\x12\n\nhash_types\x18\x02 \x03(\t\"\x8c\x02\n\x10\x46ileHashResponse\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12S\n\x06hashes\x18\x02 \x03(\x0b\x32\x43.giggityflix_grpc_peer.file_operations.FileHashResponse.HashesEntry\x12\x0f\n\x07success\x18\x03 \x01(\x08\x12\x45\n\x05\x65rror\x18\x04 \x01(\x0e\x32\x31.giggityflix_grpc_peer.commons.CatalogErrorReasonH\x00\x88\x01\x01\x1a-\n\x0bHashesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06_error\"B\n\x10\x46ileRemapRequest\x12\x16\n\x0eold_catalog_id\x18\x01 \x01(\t\x12\x16\n\x0enew_catalog_id\x18\x02 \x01(\t\"\x8d\x01\n\x11\x46ileRemapResponse\x12\x16\n\x0enew_catalog_id\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12\x45\n\x05\x65rror\x18\x03 \x01(\x0e\x32\x31.giggityflix_grpc_peer.commons.CatalogErrorReasonH\x00\x88\x01\x01\x42\x08\n\x06_errorb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x66ile_operations.proto\x12\x15giggityflix_grpc_peer\x1a\rcommons.proto\"(\n\x11\x46ileDeleteRequest\x12\x13\n\x0b\x63\x61talog_ids\x18\x01 \x03(\t\"\x82\x01\n\x12\x46ileDeleteResponse\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12=\n\x05\x65rror\x18\x03 \x01(\x0e\x32).giggityflix_grpc_peer.CatalogErrorReasonH\x00\x88\x01\x01\x42\x08\n\x06_error\"9\n\x0f\x46ileHashRequest\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12\x12\n\nhash_types\x18\x02 \x03(\t\"\xf4\x01\n\x10\x46ileHashResponse\x12\x12\n\ncatalog_id\x18\x01 \x01(\t\x12\x43\n\x06hashes\x18\x02 \x03(\x0b\x32\x33.giggityflix_grpc_peer.FileHashResponse.HashesEntry\x12\x0f\n\x07success\x18\x03 \x01(\x08\x12=\n\x05\x65rror\x18\x04 \x01(\x0e\x32).giggityflix_grpc_peer.CatalogErrorReasonH\x00\x88\x01\x01\x1a-\n\x0bHashesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06_error\"B\n\x10\x46ileRemapRequest\x12\x16\n\x0eold_catalog_id\x18\x01 \x01(\t\x12\x16\n\x0enew_catalog_id\x18\x02 \x01(\t\"\x85\x01\n\x11\x46ileRemapResponse\x12\x16\n\x0enew_catalog_id\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12=\n\x05\x65rror\x18\x03 \x01(\x0e\x32).giggityflix_grpc_peer.CatalogErrorReasonH\x00\x88\x01\x01\x42\x08\n\x06_errorb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,18 +34,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_FILEHASHRESPONSE_HASHESENTRY']._loaded_options = None
   _globals['_FILEHASHRESPONSE_HASHESENTRY']._serialized_options = b'8\001'
-  _globals['_FILEDELETEREQUEST']._serialized_start=79
-  _globals['_FILEDELETEREQUEST']._serialized_end=119
-  _globals['_FILEDELETERESPONSE']._serialized_start=122
-  _globals['_FILEDELETERESPONSE']._serialized_end=260
-  _globals['_FILEHASHREQUEST']._serialized_start=262
-  _globals['_FILEHASHREQUEST']._serialized_end=319
-  _globals['_FILEHASHRESPONSE']._serialized_start=322
-  _globals['_FILEHASHRESPONSE']._serialized_end=590
-  _globals['_FILEHASHRESPONSE_HASHESENTRY']._serialized_start=535
-  _globals['_FILEHASHRESPONSE_HASHESENTRY']._serialized_end=580
-  _globals['_FILEREMAPREQUEST']._serialized_start=592
-  _globals['_FILEREMAPREQUEST']._serialized_end=658
-  _globals['_FILEREMAPRESPONSE']._serialized_start=661
-  _globals['_FILEREMAPRESPONSE']._serialized_end=802
+  _globals['_FILEDELETEREQUEST']._serialized_start=63
+  _globals['_FILEDELETEREQUEST']._serialized_end=103
+  _globals['_FILEDELETERESPONSE']._serialized_start=106
+  _globals['_FILEDELETERESPONSE']._serialized_end=236
+  _globals['_FILEHASHREQUEST']._serialized_start=238
+  _globals['_FILEHASHREQUEST']._serialized_end=295
+  _globals['_FILEHASHRESPONSE']._serialized_start=298
+  _globals['_FILEHASHRESPONSE']._serialized_end=542
+  _globals['_FILEHASHRESPONSE_HASHESENTRY']._serialized_start=487
+  _globals['_FILEHASHRESPONSE_HASHESENTRY']._serialized_end=532
+  _globals['_FILEREMAPREQUEST']._serialized_start=544
+  _globals['_FILEREMAPREQUEST']._serialized_end=610
+  _globals['_FILEREMAPRESPONSE']._serialized_start=613
+  _globals['_FILEREMAPRESPONSE']._serialized_end=746
 # @@protoc_insertion_point(module_scope)

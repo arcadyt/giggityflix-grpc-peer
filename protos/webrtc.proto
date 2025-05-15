@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package giggityflix_grpc_peer.webrtc;
+package giggityflix_grpc_peer;
+
 import "commons.proto";
 
 message StreamSessionRequest {
@@ -14,7 +15,7 @@ message StreamSessionResponse {
   string catalog_id = 1;
   string session_id = 2;
   bool success = 3;
-  optional commons.CatalogErrorReason error = 4;
+  optional CatalogErrorReason error = 4;
 }
 
 message SDPOffer {

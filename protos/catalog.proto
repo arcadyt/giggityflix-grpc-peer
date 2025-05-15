@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package giggityflix_grpc_peer.catalog;
+package giggityflix_grpc_peer;
 
 message CatalogAnnouncementRequest {
 }

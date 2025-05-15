@@ -1,6 +1,7 @@
 # GiggityFlix gRPC Shared Module
 
-Shared gRPC interface definitions for communication between peer and edge services in the GiggityFlix media streaming platform.
+Shared gRPC interface definitions for communication between peer and edge services in the GiggityFlix media streaming
+platform.
 
 ## Overview
 
@@ -47,13 +48,13 @@ from giggityflix_grpc_peer.peer_edge import PeerEdgeServiceStub
 
 # Import message types
 from giggityflix_grpc_peer.peer_edge import (
-    EdgeMessage, PeerMessage, 
+    EdgeMessage, PeerMessage,
     PeerRegistrationRequest, PeerRegistrationResponse
 )
 
 # Import server-side classes
 from giggityflix_grpc_peer.peer_edge import (
-    PeerEdgeServiceServicer, 
+    PeerEdgeServiceServicer,
     add_PeerEdgeServiceServicer_to_server
 )
 ```
@@ -93,10 +94,11 @@ for response in responses_iterator:
 import asyncio
 import grpc
 from giggityflix_grpc_peer.peer_edge import (
-    PeerEdgeServiceServicer, 
+    PeerEdgeServiceServicer,
     add_PeerEdgeServiceServicer_to_server,
     EdgeMessage, PeerRegistrationResponse
 )
+
 
 class MyPeerEdgeService(PeerEdgeServiceServicer):
     async def message(self, request_iterator, context):
@@ -105,7 +107,7 @@ class MyPeerEdgeService(PeerEdgeServiceServicer):
             if request.HasField('registration_request'):
                 # Handle registration request
                 reg_request = request.registration_request
-                
+
                 # Create response
                 response = EdgeMessage(
                     request_id=request.request_id,
@@ -115,8 +117,9 @@ class MyPeerEdgeService(PeerEdgeServiceServicer):
                         success=True
                     )
                 )
-                
+
                 yield response
+
 
 async def serve():
     server = grpc.aio.server()
@@ -124,6 +127,7 @@ async def serve():
     server.add_insecure_port('[::]:50051')
     await server.start()
     await server.wait_for_termination()
+
 
 if __name__ == '__main__':
     asyncio.run(serve())
@@ -145,8 +149,8 @@ python -m src.giggityflix_grpc_peer.compile_protos
 
 - `protos/`: Protocol Buffer definition files
 - `src/giggityflix_grpc_peer/`: Package source code
-  - `__init__.py`: Package initialization
-  - `peer_edge.py`: Module for easy imports
-  - `peer_edge_pb2.py`: Generated message classes
-  - `peer_edge_pb2_grpc.py`: Generated service classes
-  - `compile_protos.py`: Script to generate code from `.proto` files
+    - `__init__.py`: Package initialization
+    - `peer_edge.py`: Module for easy imports
+    - `peer_edge_pb2.py`: Generated message classes
+    - `peer_edge_pb2_grpc.py`: Generated service classes
+    - `compile_protos.py`: Script to generate code from `.proto` files

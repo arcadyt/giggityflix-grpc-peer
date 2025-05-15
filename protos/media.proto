@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package giggityflix_grpc_peer.media;
+package giggityflix_grpc_peer;
 
 message ScreenshotCaptureRequest {
   string catalog_id = 1;

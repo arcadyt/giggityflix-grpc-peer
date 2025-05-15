@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package giggityflix_grpc_peer.commons;
+package giggityflix_grpc_peer;
 
 enum CatalogErrorReason {
   BAD_CATALOG_ID = 0;
